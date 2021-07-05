@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-in</title>
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+<script>
+    function verifyPassword() {
+    
+    
+      var pw = document.getElementById("pswd").value;
+      //check empty password field
+      if(pw == "") {
+         document.getElementById("message").innerHTML = "**Fill the password please!";
+         return false;
+      }
+     
+     //minimum password length validation
+      if(pw.length < 8) {
+         document.getElementById("message").innerHTML = "**Password length must be atleast 8 characters";
+         return false;
+      }
+    
+    //maximum length of password validation
+      if(pw.length > 15) {
+         document.getElementById("message").innerHTML = "**Password length must not exceed 15 characters";
+         return false;
+      } else {
+         alert("Password is correct");
+      }
+    }
+    </script>
+<body class="text-center">
+    <img class="bg" src="plate2.jpeg" alt="beach">
+    <form action="file.php" method="post" class="fill" onsubmit ="return verifyPassword()">
+       
+        <img class="bd"  src="pic.jpeg" alt="red" >
+        
+        <div class="container">
+        <h1><u> Sign in</u></h1>
+        <br>
+        <label><b>Email address :</b></label>
+          <input type="email" name="email" id="email" placeholder="name@example.com">
+          
+        <br>
+        <br>
+        <label ><b>Password :   </b></label>
+          <input type="password" name="password" placeholder="Password" id="pswd">
+          <span id = "message" style="color:red"> </span> <br>
+         
+        
+    <br>
+        <br>  <label>
+            <input type="checkbox" value="show-password">Show Password
+          </label>
+          
+          <br>
+          <br>
+          <br>
+        
+        <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+        <button type = "reset" value = "Reset" >Reset</button>
+         </div>
+    
+      </form>
+    
+</body>
+</html>
